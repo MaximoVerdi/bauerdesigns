@@ -22,18 +22,27 @@ Gama de colores:
 --perenne-grey: #4A5C5A;
 
 ## Header
+
 Logo y menu de navegación
 
 ## Hero-Section
-h1: Bauer designs 
-p:  We believe that every space deserves beautiful, functional window treatments that enhance its aesthetic appeal.
+
+h1: Bauer designs
+p: We believe that every space deserves beautiful, functional window treatments that enhance its aesthetic appeal.
 CTA: Get your free quote
 CTA: Free Quote →
 
 ## About-Section
+
 h1: About us
-p: At Bauer Interior Designs, our mission is to provide high-quality custom blinds and shutters tailored to your home’s unique style. We are a team of designers and developers who love to create beautiful and functional window treatments. 
+p: At Bauer Interior Designs, our mission is to provide high-quality custom blinds and shutters tailored to your home’s unique style. We are a team of designers and developers who love to create beautiful and functional window treatments.
 
 ## Services-Section
+
 h1: Services
 p
+
+<i class='bx bx-layers'></i>
+<i class='bx bx-window'></i>
+<i class='bx bx-home-alt'></i>
+<i class='bx bx-spanner'></i>

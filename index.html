@@ -22,20 +22,23 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="header__logo">
-            <span><a href="#home">Bauer Designs</a></span>
+            <span><a href="#">Bauer Interior Designs</a></span>
         </div>
         <div class="header__nav-container">
             <button id="burguer-btn">≡</button>
             <nav class="header__nav" id="nav">
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="#home">Home</a></li>
                     <li class="header__nav-item"><a href="#services">Services</a></li>
                     <li class="header__nav-item"><a href="#about">About Us</a></li>
                     <li class="header__nav-item"><a href="#portfolio">Portfolio</a></li>
                     <li class="header__nav-item"><a href="#reviews">Reviews</a></li>
                     <a class="free-quote btn-style901 " href="#form">Free Quote</a>
+                    <ul class="header__socials">
+                        <a href="#"><i class='bx  bx-envelope'></i></a>
+                        <a href="#"><i class="bxl bx-instagram"></i></a>
+                    </ul>
                 </ul>
             </nav>
         </div>
@@ -52,9 +55,9 @@
     </main>
 
     <!-- Services Section -->
-    <section class="services__section">
+    <section class="services__section fade-in-section" id="services">
         <div class="services__header">
-            <h3>Our Coastal Custom Services</h3>
+            <h3>Our Olympic Peninsula Custom Services</h3>
             <div class="separator"></div>
             <p>Elevate your coastal home with our premium window treatments, designed to complement the natural beauty of coastal living.</p>
         </div>
@@ -65,12 +68,29 @@
                         <i class='bx bx-window'></i>
                     </div>
                     <div>
-                        <h4>Custom Blinds</h4>
-                        <p>Sleek, modern, coastal-inspired window treatments designed for both style and functionality.</p>
+                        <h4>Blinds</h4>
+                        <p class="service__description">Sleek, modern, coastal-inspired window treatments designed for both style and functionality.</p>
                     </div>
                 </div>
-                <a href="#">View More <i class="bx bx-arrow-right"></i></a>
+                    <button class="view-more-btn" onclick="document.getElementById('serviceDialog-blinds').showModal()">
+                        View More <i class="bx bx-arrow-right"></i>
+                    </button>             
+                <dialog class="service__dialog" id="serviceDialog-blinds">
+                    <div class="service__dialog-header">
+                        <div class="service__icon">
+                            <i class='bx bx-home-alt'></i>
+                        </div>
+                        <h4>Blinds</h4>
+                    </div>
+                    <hr>
+                    <p class="service__dialog-text">Sleek, modern, coastal-inspired window treatments designed for both style and functionality.</p>
+                    <p class="service__dialog-text-2">Our custom blinds are crafted with premium materials and cutting-edge technology to provide the perfect balance of light control and privacy. We offer a wide range of styles including horizontal blinds, vertical blinds, and motorized options. Each blind is measured and installed with precision to ensure a perfect fit for your windows. Our coastal-inspired designs complement beachfront homes and modern interiors alike, while providing excellent UV protection and energy efficiency.</p>
+                    <form method="dialog">
+                        <button class="modal-close-btn" type="submit">Close</button>
+                    </form>
+                </dialog>
             </article>
+
             <article class="service__item">
                 <div class="service__content">
                     <div class="service__icon">
@@ -78,11 +98,28 @@
                     </div>
                     <div>
                         <h4>Shutters</h4>
-                        <p>Timeless, durable elegance that adds character and value to your coastal home.</p>
+                        <p class="service__description">Timeless, durable elegance that adds character and value to your coastal home.</p>
                     </div>
                 </div>
-                <a href="#">View More <i class="bx bx-arrow-right"></i></a>
+                    <button class="view-more-btn" onclick="document.getElementById('serviceDialog-shutters').showModal()">
+                        View More <i class="bx bx-arrow-right"></i>
+                    </button>             
+                <dialog class="service__dialog" id="serviceDialog-shutters">
+                    <div class="service__dialog-header">
+                        <div class="service__icon">
+                            <i class='bx bx-layers'></i>
+                        </div>
+                        <h4>Shutters</h4>
+                    </div>
+                    <hr>
+                    <p class="service__dialog-text">Timeless, durable elegance that adds character and value to your coastal home.</p>
+                    <p class="service__dialog-text-2">Our premium shutters are built to last, offering classic beauty and superior functionality. Available in both interior and exterior options, our shutters are manufactured using high-quality materials that withstand coastal weather conditions. Choose from traditional plantation styles, modern designs, or custom solutions. Each shutter is carefully crafted to your specifications and comes with a lifetime warranty. Perfect for creating that quintessential coastal look while providing excellent insulation and light control.</p>
+                    <form method="dialog">
+                        <button class="modal-close-btn" type="submit">Close</button>
+                    </form>
+                </dialog>
             </article>
+
             <article class="service__item">
                 <div class="service__content">
                     <div class="service__icon">
@@ -90,28 +127,62 @@
                     </div>
                     <div>
                         <h4>Drapes</h4>
-                        <p>Luxurious, tailored fabric solutions, perfectly matched to your home's unique aesthetic.</p>
+                        <p class="service__description">Luxurious, tailored fabric solutions, perfectly matched to your home's unique aesthetic.</p>
                     </div>
                 </div>
-                <a href="#">View More <i class="bx bx-arrow-right"></i></a>
+                    <button class="view-more-btn" onclick="document.getElementById('serviceDialog-drapes').showModal()">
+                        View More <i class="bx bx-arrow-right"></i>
+                    </button>             
+                <dialog class="service__dialog" id="serviceDialog-drapes">
+                    <div class="service__dialog-header">
+                        <div class="service__icon">
+                            <i class='bx bx-home-alt'></i>
+                        </div>
+                        <h4>Drapes</h4>
+                    </div>
+                    <hr>
+                    <p class="service__dialog-text">Luxurious, tailored fabric solutions, perfectly matched to your home's unique aesthetic.</p>
+                    <p class="service__dialog-text-2">Transform your space with our custom drapery collections. We offer an extensive selection of fabrics, from light and airy sheers to rich, room-darkening materials. Our expert designers will help you select the perfect patterns, colors, and textures to complement your interior design. Each drape is professionally measured and sewn to ensure proper fullness and length. We specialize in layered window treatments that combine functionality with sophisticated coastal style.</p>
+                    <form method="dialog">
+                        <button class="modal-close-btn" type="submit">Close</button>
+                    </form>
+                </dialog>
             </article>
+
             <article class="service__item">
                 <div class="service__content">
                     <div class="service__icon">
                         <i class='bx bx-spanner'></i>
+
                     </div>
                     <div>
                         <h4>Repairs</h4>
-                        <p>Restore your window treatments flawlessly with our expert repair and maintenance services.</p>
+                        <p class="service__description">Restore your window treatments flawlessly with our expert repair and maintenance services.</p>
                     </div>
                 </div>
-                <a href="#">View More <i class="bx bx-arrow-right"></i></a>
+                    <button class="view-more-btn" onclick="document.getElementById('serviceDialog-repairs').showModal()">
+                        View More <i class="bx bx-arrow-right"></i>
+                    </button>             
+                <dialog class="service__dialog" id="serviceDialog-repairs" closedby="any">
+                    <div class="service__dialog-header">
+                        <div class="service__icon">
+                            <i class='bx bx-spanner'></i>
+                        </div>
+                        <h4>Repairs</h4>
+                    </div>
+                    <hr>
+                    <p class="service__dialog-text">Restore your window treatments flawlessly with our expert repair and maintenance services.</p>
+                    <p class="service__dialog-text-2">Our professional repair service extends the life of your window treatments. Our experienced technicians can fix a wide range of issues, from broken mechanisms to cord replacements and fabric repairs. We service all major brands and styles of window treatments. Regular maintenance packages are available to keep your window treatments operating smoothly. We also offer emergency repair services for urgent situations, ensuring your home's privacy and comfort are never compromised.</p>
+                    <form method="dialog">
+                        <button class="modal-close-btn" type="submit">Close</button>
+                    </form>
+                </dialog>
             </article>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="fade-in-section">
         <div class="about__content">
             <div class="about__image-container">
                 <img src="/static/about.jpg" alt="about us image">
@@ -121,12 +192,12 @@
                     <div class="about__text">
                         <div>
                             <span>About Us</span>
-                            <h3>Building high-quality custom blinds since 2013</h3>
+                            <h3>Building high-quality custom window treatments since 1976</h3>
                         </div>
-                        <p>At Bauer Interior Designs, our mission is to provide high-quality custom blinds and shutters tailored
-                            to your home's unique style. We are a team of designers and developers who love to create beautiful
-                            and functional window treatments. Our team of passionate experts brings together years of experience and an eye for detail to deliver solutions that perfectly match your style and needs.</p>
-                        </div>
+                        <p>Bauer Interior Design has served the greater Sequim area with a focus on quality, value and customer service since being established in 1976 by Ed and Linda Bauer.</p>
+                        <p>Now owned by daughter Heidi Bauer, an interior designer with over 30 years experience, we continue to offer new blinds, shutters, shades, draperies, blind repairs and furnishings.</p>    
+                        <p>Stop by our showroom and meet our onsite father/daughter management team, Brian and Bri Oechsner.</p>
+                    </div>
                         <div class="about__skills">
                             <div class="about__skill-item">
                                 <i class="bx bx-user"></i>
@@ -153,7 +224,7 @@
                 </div>
     </section>
 
-    <section class="testimonials__section">
+    <section class="testimonials__section fade-in-section" id="reviews">
         <h3>What Our Clients Say</h3>
         <div class="separator"></div>
         <div class="testiomials__container">
@@ -206,6 +277,48 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="form__section">
+        <h3>Request a Free Quote</h3>
+        <div class="separator"></div>
+        <p>Get a free customized quote for your window treatments needs.</p>
+        <form class="form" id="form">
+            <div class="form__container">
+                <div class="form__group">
+                    <label>Your Name
+                        <input type="text" id="name" name="name" placeholder="Jhon Doe" required>
+                    </label>
+                    <label>Phone Number
+                        <input inputmode="numeric" type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
+                    </label>
+                    <label>Number of Windows
+                        <input type="number" id="windows" name="windows" placeholder="3" min="1" required>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label>Email
+                        <input inputmode="email" type="email" id="email" name="email" placeholder="jhon@example.com" required>
+                    </label>
+                    <label>Address
+                        <input type="text" id="address" name="address" placeholder="123 Coastal St, City, State" required>
+                    </label>
+                    <label> Product Type
+                        <select id="product-type" name="product-type" required>
+                            <option value="" disabled selected>Select...</option>
+                            <option value="blinds">Blinds</option>
+                            <option value="curtains">Curtans</option>
+                            <option value="shutters">Shutters</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <label class="textarea-label" for="message">Additional Details or Special Requirements
+            <textarea name="message" id="message" placeholder="Message" required></textarea>
+            </label>
+            <button type="submit">Submit <i class='bx  bx-send'></i></button>
+        </form>
     </section>
 
     <script src="app.js"></script>
