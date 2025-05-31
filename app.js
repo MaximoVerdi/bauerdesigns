@@ -1,6 +1,7 @@
-const header = document.querySelector('.header');const burguerBtn = document.getElementById('burguer-btn');
+const header = document.querySelector('.header');
+const burguerBtn = document.getElementById('burguer-btn');
 const navMenu = document.getElementById('nav');
-
+const navLinks = document.querySelectorAll('.nav-link'); 
 
 burguerBtn.addEventListener('click', () => {
     navMenu.classList.toggle('show');
@@ -16,6 +17,7 @@ function handleResize() {
 
 window.addEventListener('resize', handleResize);
 handleResize();
+
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     header.classList.add('scrolled');
@@ -40,5 +42,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(section => {
     observer.observe(section);
+  });
+});
+
+window.addEventListener('scroll', function() {
+  let current = '';
+  
+  document.querySelectorAll('section').forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    
+    if (pageYOffset >= (sectionTop - 100)) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 });
