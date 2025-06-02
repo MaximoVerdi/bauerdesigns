@@ -290,7 +290,7 @@
             <div class="separator"></div>
             <p>Get a free customized quote for your window treatments needs.</p>
         
-                <form class="form" id="form">
+            <form class="form" id="form">
                     <div id="success-message" style="display: none; color: #28a745; margin: 15px 0; padding: 10px; background-color: #e6ffe6; border-radius: 4px; border-left: 4px solid #28a745; font-weight: bold;">
                         <i class='bx bx-check-circle'></i> Email sent successfully
                     </div>
@@ -440,6 +440,15 @@
         </ul>
     </footer>
 
+    <!-- EmailJs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        (function(){
+            emailjs.init("6Apq6DfihCRoT9Az7"); // reemplazá con tu clave pública
+        })();
+    </script>
+    
     <script src="app.js"></script>
 </body>
 

@@ -75,42 +75,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-document.getElementById('form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const successMessage = document.getElementById('success-message');
-    const submitBtn = document.getElementById('submit-btn');
-    
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = 'Sending... <i class="bx bx-loader-alt bx-spin"></i>';
-    
-    try {
-        const formData = new FormData(form);
-        formData.append('_subject', 'New Quote Request');
-        formData.append('_template', 'table');
-        
-        const response = await fetch('https://formsubmit.co/ajax/maximoverdi21@gmail.com', {
-            method: 'POST',
-            body: formData
-        });
-        
-        const result = await response.json();
-        
-        if(result.success) {
-            successMessage.style.display = 'block';
-            form.reset();
-            
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 10000);
-        } else {
-            alert('Error: ' + (result.message || 'Failed to send email'));
-        }
-    } catch (error) {
-        alert('Connection error: ' + error.message);
-    } finally {
-        // Restaurar botón
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Submit <i class="bx bx-send"></i>';
-    }
+emailjs.init("6Apq6DfihCRoT9Az7"); // reemplazá con la clave pública real
+document.getElementById('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const submitBtn = document.getElementById("submit-btn");
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
+  emailjs.send("service_axsxooe", "template_bhozcd9", {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    windows: document.getElementById('windows').value,
+    email: document.getElementById('email').value,
+    address: document.getElementById('address').value,
+    product_type: document.getElementById('product-type').value,
+    message: document.getElementById('message').value
+  })
+  .then(function(response) {
+    console.log("Email sent succesfully!!", response.status, response.text);
+    document.getElementById("success-message").style.display = "block";
+    document.getElementById("form").reset();
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit";
+  }, function(error) {
+    console.error("FAILED...", error);
+    alert("There was an error sending your message. Please try again later.");
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit";
+  });
 });
