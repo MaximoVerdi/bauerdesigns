@@ -27,7 +27,7 @@
     <!-- Header -->
     <header class="header" id="header">
         <div class="header__logo">
-            <span><a href="#">Bauer Interior Designs</a></span>
+            <a href="#home">Bauer Interior Designs</a>
         </div>
         <div class="header__nav-container">
             <button id="burguer-btn">≡</button>
@@ -39,8 +39,9 @@
                     <li class="header__nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
                     <a class="free-quote btn-style901 " href="#form">Free Quote</a>
                     <ul class="header__socials">
-                        <a href="#"><i class='bx  bx-envelope'></i></a>
-                        <a href="#"><i class="bxl bx-instagram"></i></a>
+                        <a target="_blank" href="mailto:bauerinteriors@yahoo.com"><i class='bx  bx-envelope'></i></a>
+                        <a target="_blank" href="https://www.instagram.com/bauer.interior.designs"><i class="bxl bx-instagram"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/share/1AfdMZmcPi/?mibextid=wwXIfr"><i class="bxl bx-facebook"></i></a>
                     </ul>
                 </ul>
             </nav>
@@ -260,8 +261,8 @@
                     <p class="testimony__text">Professional service from start to finish. Their expertise in coastal design really shows in the final result.</p>
                     <hr>
                     <div>
-                        <span>Maria Rodriguez</span>
-                        <p class="testimony__location">Coastal Villa</p>
+                        <span>Taylor J. Carter</span>
+                        <p class="testimony__location">Tacoma, Washington</p>
                     </div>
                 </div>
                 <div class="testimony">
@@ -276,8 +277,8 @@
                     <p class="testimony__text">The quality of materials and craftsmanship exceeded our expectations. Highly recommended!</p>
                     <hr>
                     <div>
-                        <span>Maria Rodriguez</span>
-                        <p class="testimony__location">Coastal Villa</p>
+                        <span>Olivia Nguyen</span>
+                        <p class="testimony__location">Olympia, Washington</p>
                     </div>
                 </div>
             </div>
@@ -290,10 +291,13 @@
             <p>Get a free customized quote for your window treatments needs.</p>
         
                 <form class="form" id="form">
+                    <div id="success-message" style="display: none; color: #28a745; margin: 15px 0; padding: 10px; background-color: #e6ffe6; border-radius: 4px; border-left: 4px solid #28a745; font-weight: bold;">
+                        <i class='bx bx-check-circle'></i> Email sent successfully
+                    </div>
                     <div class="form__container">
                         <div class="form__group">
                             <label>Your Name
-                            <input type="text" id="name" name="name" placeholder="Jhon Doe" required>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
                             </label>
                             <label>Phone Number
                                 <input inputmode="numeric" type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
@@ -322,13 +326,119 @@
                 <label class="textarea-label" for="message">Additional Details or Special Requirements
                 <textarea name="message" id="message" placeholder="Message" required></textarea>
                 </label>
-                <button type="submit">Submit <i class='bx  bx-send'></i></button>
+                <button type="submit" id="submit-btn">Submit <i class='bx  bx-send'></i></button>
             </form>
         </section>
     </div>
 
     <!-- Footer Section  -->
+    <footer class="footer">
+        <ul class="footer__socials-list">
+            <a href="#home">Bauer Interior Designs</a>
+            <ul class="footer__socials">
+                <a target="_blank" href="mailto:bauerinteriors@yahoo.com"><i class='bx  bx-envelope'></i></a>
+                <a target="_blank" href="https://www.instagram.com/bauer.interior.designs"><i class="bxl bx-instagram"></i></a>
+                <a target="_blank" href="https://www.facebook.com/share/1AfdMZmcPi/?mibextid=wwXIfr"><i class="bxl bx-facebook"></i></a>
+            </ul>
+        </ul>
 
+        <ul class="footer__services-list">
+            <span>Services</span>
+            <li>
+                <button class="footer__service-btn" onclick="document.getElementById('serviceDialog-blinds').showModal()">
+                        Blinds
+                </button>             
+                <dialog class="service__dialog" id="serviceDialog-blinds">
+                    <div class="service__dialog-header">
+                        <div class="service__icon">
+                            <i class='bx bx-home-alt'></i>
+                        </div>
+                        <h4>Blinds</h4>
+                    </div>
+                    <hr>
+                    <p class="service__dialog-text">Sleek, modern, coastal-inspired window treatments designed for both style and functionality.</p>
+                    <p class="service__dialog-text-2">Our custom blinds are crafted with premium materials and cutting-edge technology to provide the perfect balance of light control and privacy. We offer a wide range of styles including horizontal blinds, vertical blinds, and motorized options. Each blind is measured and installed with precision to ensure a perfect fit for your windows. Our coastal-inspired designs complement beachfront homes and modern interiors alike, while providing excellent UV protection and energy efficiency.</p>
+                    <form method="dialog">
+                        <button class="modal-close-btn" type="submit">Close</button>
+                    </form>
+                </dialog>
+            </li>
+
+            <li>
+            <button class="footer__service-btn" onclick="document.getElementById('serviceDialog-shutters').showModal()">
+                Shutters
+            </button>             
+            <dialog class="service__dialog" id="serviceDialog-shutters">
+                <div class="service__dialog-header">
+                    <div class="service__icon">
+                        <i class='bx bx-layers'></i>
+                    </div>
+                    <h4>Shutters</h4>
+                </div>
+                <hr>
+                <p class="service__dialog-text">Timeless, durable elegance that adds character and value to your coastal home.</p>
+                <p class="service__dialog-text-2">Our premium shutters are built to last, offering classic beauty and superior functionality. Available in both interior and exterior options, our shutters are manufactured using high-quality materials that withstand coastal weather conditions. Choose from traditional plantation styles, modern designs, or custom solutions. Each shutter is carefully crafted to your specifications and comes with a lifetime warranty. Perfect for creating that quintessential coastal look while providing excellent insulation and light control.</p>
+                <form method="dialog">
+                    <button class="modal-close-btn" type="submit">Close</button>
+                </form>
+            </dialog>
+            </li>
+
+            <li>
+                <button class="footer__service-btn" onclick="document.getElementById('serviceDialog-drapes').showModal()">
+                    Drapes
+                </button>             
+                <dialog class="service__dialog" id="serviceDialog-drapes">
+                    <div class="service__dialog-header">
+                        <div class="service__icon">
+                            <i class='bx bx-home-alt'></i>
+                        </div>
+                        <h4>Drapes</h4>
+                    </div>
+                    <hr>
+                    <p class="service__dialog-text">Luxurious, tailored fabric solutions, perfectly matched to your home's unique aesthetic.</p>
+                    <p class="service__dialog-text-2">Transform your space with our custom drapery collections. We offer an extensive selection of fabrics, from light and airy sheers to rich, room-darkening materials. Our expert designers will help you select the perfect patterns, colors, and textures to complement your interior design. Each drape is professionally measured and sewn to ensure proper fullness and length. We specialize in layered window treatments that combine functionality with sophisticated coastal style.</p>
+                    <form method="dialog">
+                        <button class="modal-close-btn" type="submit">Close</button>
+                    </form>
+                </dialog>
+            </li>
+
+            <li>
+                <button class="footer__service-btn" onclick="document.getElementById('serviceDialog-repairs').showModal()">
+                    Repairs
+                </button>             
+                <dialog class="service__dialog" id="serviceDialog-repairs" closedby="any">
+                    <div class="service__dialog-header">
+                        <div class="service__icon">
+                            <i class='bx bx-spanner'></i>
+                        </div>
+                        <h4>Repairs</h4>
+                    </div>
+                    <hr>
+                    <p class="service__dialog-text">Restore your window treatments flawlessly with our expert repair and maintenance services.</p>
+                    <p class="service__dialog-text-2">Our professional repair service extends the life of your window treatments. Our experienced technicians can fix a wide range of issues, from broken mechanisms to cord replacements and fabric repairs. We service all major brands and styles of window treatments. Regular maintenance packages are available to keep your window treatments operating smoothly. We also offer emergency repair services for urgent situations, ensuring your home's privacy and comfort are never compromised.</p>
+                    <form method="dialog">
+                        <button class="modal-close-btn" type="submit">Close</button>
+                    </form>
+                </dialog>
+            </li>
+
+        </ul>
+
+        <ul class="footer__nav-list">
+            <span>Navigation</span>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+
+        <ul class="footer__cta-list">
+            <a class="free-quote btn-style901 " href="#form">Free Quote</a>
+            <p>Bauer Interior Designs. All rights reserved.</p>
+        </ul>
+    </footer>
 
     <script src="app.js"></script>
 </body>

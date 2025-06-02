@@ -73,3 +73,44 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+
+document.getElementById('form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const successMessage = document.getElementById('success-message');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending... <i class="bx bx-loader-alt bx-spin"></i>';
+    
+    try {
+        const formData = new FormData(form);
+        formData.append('_subject', 'New Quote Request');
+        formData.append('_template', 'table');
+        
+        const response = await fetch('https://formsubmit.co/ajax/maximoverdi21@gmail.com', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const result = await response.json();
+        
+        if(result.success) {
+            successMessage.style.display = 'block';
+            form.reset();
+            
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 10000);
+        } else {
+            alert('Error: ' + (result.message || 'Failed to send email'));
+        }
+    } catch (error) {
+        alert('Connection error: ' + error.message);
+    } finally {
+        // Restaurar botón
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Submit <i class="bx bx-send"></i>';
+    }
+});
