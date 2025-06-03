@@ -75,31 +75,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-emailjs.init("6Apq6DfihCRoT9Az7"); // reemplazá con la clave pública real
-document.getElementById('form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const submitBtn = document.getElementById("submit-btn");
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Sending...";
-  emailjs.send("service_axsxooe", "template_bhozcd9", {
-    name: document.getElementById('name').value,
-    phone: document.getElementById('phone').value,
-    windows: document.getElementById('windows').value,
-    email: document.getElementById('email').value,
-    address: document.getElementById('address').value,
-    product_type: document.getElementById('product-type').value,
-    message: document.getElementById('message').value
-  })
-  .then(function(response) {
-    console.log("Email sent succesfully!!", response.status, response.text);
-    document.getElementById("success-message").style.display = "block";
-    document.getElementById("form").reset();
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Submit";
-  }, function(error) {
-    console.error("FAILED...", error);
-    alert("There was an error sending your message. Please try again later.");
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Submit";
+document.getElementById("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+      data.append('_subject', 'Quote Requested from website |  ' + form.querySelector('[name="name"]').value);
+
+
+    fetch("https://formsubmit.co/sales@bauerinteriordesigns.com", {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        document.getElementById("success-message").style.display = "block";
+        form.reset();
+      } else {
+        alert("There was an error sending the form.");
+      }
+    }).catch(error => {
+      alert("There was an error connecting to the server.");
+    });
   });
-});

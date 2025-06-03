@@ -291,43 +291,49 @@
             <p>Get a free customized quote for your window treatments needs.</p>
         
             <form class="form" id="form">
-                    <div id="success-message" style="display: none; color: #28a745; margin: 15px 0; padding: 10px; background-color: #e6ffe6; border-radius: 4px; border-left: 4px solid #28a745; font-weight: bold;">
-                        <i class='bx bx-check-circle'></i> Email sent successfully
-                    </div>
-                    <div class="form__container">
-                        <div class="form__group">
-                            <label>Your Name
-                            <input type="text" id="name" name="name" placeholder="John Doe" required>
-                            </label>
-                            <label>Phone Number
-                                <input inputmode="numeric" type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
-                            </label>
-                            <label>Number of Windows
-                                <input type="number" id="windows" name="windows" placeholder="3" min="1" required>
-                            </label>
-                        </div>
-                        <div class="form__group">
-                            <label>Email
-                                <input inputmode="email" type="email" id="email" name="email" placeholder="jhon@example.com" required>
-                            </label>
-                            <label>Address
-                                <input type="text" id="address" name="address" placeholder="123 Coastal St, City, State" required>
-                            </label>
-                            <label> Product Type
-                                <select id="product-type" name="product-type" required>
-                                    <option value="" disabled selected>Select...</option>
-                                    <option value="blinds">Blinds</option>
-                                    <option value="curtains">Curtans</option>
-                                    <option value="shutters">Shutters</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-                <label class="textarea-label" for="message">Additional Details or Special Requirements
+                <!-- <input type="hidden" name="_subject" value="Quote Request from website"> -->
+                <div id="success-message">
+                  Thank you! Your message has been sent.
+                </div>
+              <div class="form__container">
+                <div class="form__group">
+                  <label>Your Name
+                    <input type="text" name="name" placeholder="John Doe" required>
+                  </label>
+                  <label>Phone Number
+                    <input inputmode="numeric" type="tel" name="phone" placeholder="+1 234 567 8900" required>
+                  </label>
+                  <label>Number of Windows
+                    <input type="number" name="windows" placeholder="3" min="1" required>
+                  </label>
+                </div>
+                <div class="form__group">
+                  <label>Email
+                    <input inputmode="email" type="email" name="email" placeholder="jhon@example.com" required>
+                  </label>
+                  <label>Address
+                    <input type="text" name="address" placeholder="123 Coastal St, City, State" required>
+                  </label>
+                  <label>Product Type
+                    <select name="product_type" required>
+                      <option value="" disabled selected>Select...</option>
+                      <option value="blinds">Blinds</option>
+                      <option value="curtains">Curtains</option>
+                      <option value="shutters">Shutters</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+
+              <label class="textarea-label" for="message">Additional Details or Special Requirements
                 <textarea name="message" id="message" placeholder="Message" required></textarea>
-                </label>
-                <button type="submit" id="submit-btn">Submit <i class='bx  bx-send'></i></button>
+              </label>
+          
+              <!-- Opcionales para más control -->
+              <input type="hidden" name="_captcha" value="false">
+              <button type="submit">Submit <i class='bx bx-send'></i></button>
             </form>
+
         </section>
     </div>
 
@@ -439,15 +445,6 @@
             <p>Bauer Interior Designs. All rights reserved.</p>
         </ul>
     </footer>
-
-    <!-- EmailJs -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <script>
-        (function(){
-            emailjs.init("6Apq6DfihCRoT9Az7"); // reemplazá con tu clave pública
-        })();
-    </script>
     
     <script src="app.js"></script>
 </body>
