@@ -19,7 +19,6 @@
 
 
 body {
-    height: 200vh;
     overflow-x: hidden;
 }
 
@@ -214,18 +213,21 @@ a {
     flex-direction: column;
     text-align: center;
     gap: 15px;
+    padding: 0 10px;
 }
 
 .hero__content h1 {
-    font-size: clamp(3.5rem, 6vw, 4.5rem);
+    font-size: clamp(3rem, 6vw, 4.5rem);
     font-weight: 700;
 }
 
 .hero__content p {
-    font-size: 1.07em;
+    font-size: clamp(1rem, 1.5vw, 1rem);
     max-width: 80%;
     color: var(--light-grey);
 }
+
+
 
 .cta-btn {
     display: flex;
@@ -258,6 +260,7 @@ a {
     text-align: center;
     padding: 50px 8vw;
     height: 80vh;
+    margin-bottom: 5em;
 }
 
 .about__content {
@@ -304,7 +307,7 @@ a {
 }
 
 .about__text h3 {
-    font-size: 2.2em;
+    font-size: clamp(2rem, 3vw, 2.2em);
     font-weight: 700;
     color: var(--navy-text);
 }
@@ -360,16 +363,18 @@ a {
     align-items: center;
     text-align: center;
     gap: 30px;
-    padding-bottom: 80px;
     background: linear-gradient(to bottom, var(--beige), var(--white));
     padding-top: 80px;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 
 .services__header h3 {
-    font-size: 2.2em;
+    font-size: clamp(2rem, 3vw, 2.2em);
     font-weight: 700;
     color: var(--navy-text);
 }
+
 
 .separator {
     width: 100px;
@@ -380,9 +385,9 @@ a {
 }
 
 .services__header p {
-    font-size: 1.08em;
-    color: var(--grey-text);
-    width: 80%;
+    font-size: clamp(1rem, 1.5vw, 1rem);
+    max-width: 60%;
+    color: var(--grey-text); 
     margin: auto;
 }
 
@@ -535,6 +540,56 @@ a {
     cursor: pointer;
 }
 
+/* Brands Section */
+.brands__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5em 2vw;
+    background-color: var(--beige);
+    margin-top: 3em;
+}
+
+.brands__section h3 {
+    font-size: clamp(2rem, 3vw, 2.2em);
+    font-weight: 700;
+    color: var(--navy-text);
+}
+
+.brands__section p {
+    font-size: clamp(1rem, 1.5vw, 1rem);
+    max-width: 80%;
+    color: var(--grey-text); 
+    margin: auto;
+}
+
+.brands__section ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    gap: 50px;
+}
+
+.brands__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.brands__container img {
+    min-height: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.brands__container img:last-child {
+    height: 100px;
+}
+
 
 /* Testimonials Section */
 
@@ -543,12 +598,12 @@ a {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 80px 2vw;
+    padding: 5em 2vw;
     background-color: var(--beige);
 }
 
 .testimonials__section h3 {
-    font-size: 2.2em;
+    font-size: clamp(2rem, 3vw, 2.2em);
     font-weight: 700;
     color: var(--navy-text);
 }
@@ -630,15 +685,16 @@ hr {
 }
 
 .form__section h3 {
-    font-size: 2.2em;
+    font-size: clamp(2rem, 3vw, 2.2em);
     font-weight: 700;
     color: var(--navy-text);
     text-align: center;
 }
 
 .form__section p {
-    font-size: 1.08em;
-    color: var(--grey-text);
+    font-size: clamp(1rem, 1.5vw, 1rem);
+    max-width: 80%;
+    color: var(--grey-text); 
     margin: auto;
     text-align: center;
 }
@@ -654,7 +710,7 @@ hr {
     padding: 30px 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     background-color: var(--beige);
-    margin-top: 50px;
+    margin: 50px 0;
 }
 
 .form div {
@@ -754,6 +810,17 @@ button[type="submit"]:hover {
     height: 100%;
 }
 
+.footer__address {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer__address p {
+    font-size: 1.08em;
+    color: var(--grey-text);
+}
+
 .footer__socials-list a {
     font-size: 1.5em;
     font-weight: 700;
@@ -839,8 +906,13 @@ button[type="submit"]:hover {
     color: var(--grey-text);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1350px) {
+    #about {
+        margin-bottom: 5em;
+    }
+}
 
+@media (max-width: 1200px) {
     .header__logo a {
         font-size: 1.5em;
     }
@@ -860,9 +932,7 @@ button[type="submit"]:hover {
     }
 
     .about__image-container img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
+        height: 300px;
         border-radius: 30px;
         border: 3px solid var(--white);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -874,10 +944,6 @@ button[type="submit"]:hover {
         flex-direction: column;
     }
 
-    .about__content img {
-        height: 300px;
-    }
-
     .services__container {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -885,37 +951,33 @@ button[type="submit"]:hover {
 
     .testiomials__container {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: 3fr;
+        grid-template-columns: 1fr;
         width: 90%;
         gap: 60px;
     }
-
 }
 
 @media (max-width: 1025px) {
-
     #burguer-btn {
         display: block;
     }
-    
+
     .header__nav {
         flex-direction: column;
         align-items: flex-end;
         text-align: right;
         position: absolute;
-        height: calc(100vh - 90px);
         top: 90px;
         right: 0;
         width: 45%;
+        height: calc(100vh - 90px);
         padding: 50px;
         z-index: 1000;
         pointer-events: none;
         opacity: 0;
         transform: translateX(100%);
         transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
-        background-color: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px) !important;
+        background-color: rgba(255, 255, 255, 0.945);
     }
 
     .header__nav.show {
@@ -935,7 +997,8 @@ button[type="submit"]:hover {
         font-size: 1.2em;
     }
 
-    .header__nav-item a:hover {
+    .header__nav-item a:hover,
+    .header__socials a i:hover {
         color: var(--gold);
     }
 
@@ -943,33 +1006,26 @@ button[type="submit"]:hover {
         color: var(--navy);
     }
 
-    .header__socials a i:hover {
-        color: var(--gold);
-    }
-
     .free-quote {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-left: 0;
-        height: 40px;
         width: 130px;
+        height: 40px;
         font-size: 0.9em;
     }
-    
+
     .footer__nav-list {
         display: none;
     }
 
+    #about {
+        margin-bottom: 25em;
+    }
 }
 
 @media (max-width: 900px) {
-    
-
-    .about__content {
-        flex-direction: column;
-    }
-
     .about__text {
         text-align: center;
         align-items: center;
@@ -987,15 +1043,32 @@ button[type="submit"]:hover {
 
 @media (max-width: 768px) {
     .services__section {
-        padding: 100px 1vw; 
+        padding-top: 80px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
 
     .services__container {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .services__header p {
+        max-width: 100%;
+    }
+
+    .brands__section ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .brands__section img {
+        height: 50px;
+        width: fit-content;
+        margin-top: 20px;
     }
 
     #about {
-        margin-bottom: 400px;
+        margin-bottom: 30em;
     }
 
     .form__section {
@@ -1017,25 +1090,31 @@ button[type="submit"]:hover {
         height: fit-content;
     }
 
-    .footer__socials-list {
-        justify-content: center;
+    .footer__socials-list,
+    .footer__services-list,
+    .footer__cta-list {
+        flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .footer__socials {
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    .footer__socials a {
+        margin-top: 4px;
+        margin-right: 0px;
     }
 
     .footer__services-list {
         display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin-top: 20px;
     }
- 
-    .footer__cta-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
+
+    .footer__socials-list {
+        gap: 15px;
     }
 
     .footer__cta-list p {
@@ -1044,24 +1123,38 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 480px) {
-
     .header__nav {
         width: 60%;
     }
 
-    .header__nav-list {
-        text-align: right;
+    .cta-btn {
+        font-size: 0.9em;
+        padding: 9px 20px;
+        border-radius: 3px;
     }
 
+    .brands__section img {
+        height: 35px;
+        width: fit-content;
+    }
+
+
     #about {
-        margin-bottom: 550px;
+        margin-bottom: 35em;
     }
 
 }
 
+@media (max-width: 340px) {
+    #about {
+        margin-bottom: 45em;
+    }
+}
+
+
 .fade-in-section {
   opacity: 0;
-  transform: translateY(50px); /* Desplaza hacia arriba al aparecer */
+  transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
